@@ -1,0 +1,9 @@
+.cube-wrap {
+    background-color: lightblue;
+    width: 100%;
+}
+
+.cube-wrap canvas {
+    width: 100%;
+    height: 100vh;
+}
