@@ -31,22 +31,22 @@
         const gltfLoader = new THREE.GLTFLoader();
 
         // Load the model
-        gltfLoader.load('../models/model.gltf', function(gltf) {
+        gltfLoader.load('/models/model.gltf', function(gltf) {
             
             model = gltf.scene; 
             liquid = model.children[1];
             liquidEnvMap = new THREE.CubeTextureLoader()
-            .setPath( '..//models/liquidMap/' )
+            .setPath( '/models/liquidMap/' )
             .load( [ 'nx.png', 'ny.png', 'nz.png', 'px.png', 'py.png', 'pz.png' ] );
             liquidEnvMap.mapping = THREE.CubeRefractionMapping;
                     
             let cube = model.children[0],
                 textureLoader = new THREE.TextureLoader(),
-                wood = textureLoader.load('../models/textures/wood.png'),
-                woodAo = textureLoader.load('../models/textures/wood_ao.png'),
-                woodNormal = textureLoader.load('../models/textures/wood_normal.png'),
-                woodRough = textureLoader.load('../models/textures/wood_rough.png'),
-                woodBump = textureLoader.load('../models/textures/wood_bump.png'),
+                wood = textureLoader.load('/models/textures/wood.png'),
+                woodAo = textureLoader.load('/models/textures/wood_ao.png'),
+                woodNormal = textureLoader.load('/models/textures/wood_normal.png'),
+                woodRough = textureLoader.load('/models/textures/wood_rough.png'),
+                woodBump = textureLoader.load('/models/textures/wood_bump.png'),
                 liquidMaterial = new THREE.MeshPhongMaterial( {
                     color: 0xfff6dd,
                     envMap: liquidEnvMap, 
